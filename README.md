@@ -3,7 +3,7 @@
 Welcome to the official repository for the **Sant Kabir Eye Hospital** website.
 
 ## About Us
-Sant Kabir Eye Hospital is a certified premium eye care and cataract surgery clinic located in Basti, Uttar Pradesh. We specialize in advanced eye diagnostics, laser treatments, and premium cataract surgeries. We proudly offer free surgeries under the PM-JAY Ayushman Bharat Yojana for eligible patients.
+Sant Kabir Eye Hospital is an award-winning ophthalmic facility located in Basti, Uttar Pradesh. We are dedicated to providing world-class vision correction, precision diagnostics, and expert surgical care. Our team is committed to public welfare, offering cashless treatments for eligible PM-JAY cardholders.
 
 ## Features
 - **Responsive Design**: Custom-built adaptive layouts for both desktop and mobile devices.
