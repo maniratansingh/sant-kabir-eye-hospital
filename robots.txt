@@ -14,4 +14,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: http://santkabireyehospital.com/sitemap.xml
+Sitemap: http://santkabireyehospital.piecs.org/sitemap.xml
