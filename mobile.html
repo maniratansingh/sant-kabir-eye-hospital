@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Chrome, Firefox OS, Opera & Safari Mobile (Adaptive Light/Dark theme) -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a182e" media="(prefers-color-scheme: dark)">
+    <!-- iOS Safari web-app overrides -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="description" content="Certified Premium Eye Care & Cataract Surgery in Basti. Free surgeries available under Ayushman Bharat Yojana for eligible patients.">
+    <title>Sant Kabir Eye Hospital – Premium Eye Care & Surgery in Basti</title>
+    
+    <!-- JSON-LD Structured Data for Search Engines & AI Crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Sant Kabir Eye Hospital",
+      "alternateName": "Pragati India Eye Care Society",
+      "description": "Premium cataract surgeries, advanced eye diagnostics, and laser treatment services under private care and PM-JAY Ayushman Bharat Yojana cover.",
+      "url": "http://santkabireyehospital.com",
+      "telephone": "+919415140719",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bansi Road, near Pindari Hospital, Katra",
+        "addressLocality": "Basti",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "272001",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+919415140719",
+          "contactType": "Senior Administrator",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+919336466677",
+          "contactType": "Primary Inquiry Desk",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Preload LCP hero background image (discoverable, high priority) -->
+    <link rel="preload" as="image" href="images/bg_hero_apple.webp" fetchpriority="high">
+
+    <!-- Preload mobile.css so it's non-render-blocking -->
+    <link rel="preload" href="mobile.css?v=20260709" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="mobile.css?v=20260709"></noscript>
+
+    <!-- Preload services background image to prevent layout shift when it loads -->
+    <link rel="preload" as="image" href="images/gallery_consultation.webp" fetchpriority="low">
+
+    <!-- Google Fonts: async, non-render-blocking, font-display=optional (no swap, no CLS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=optional"></noscript>
+
+    <!-- Critical inline CSS: above-fold styles so page renders without waiting for mobile.css -->
+    <style>
+      :root{--font-heading:'Outfit',sans-serif;--font-body:'Inter',sans-serif;--primary:hsl(212,92%,43%);--text-main:hsl(212,40%,16%);--text-muted:hsl(212,20%,42%);--text-light:#fff;--bg-main:hsl(210,36%,98%);--border-color:rgba(13,110,253,0.12);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;--radius-full:9999px}
+      *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+      /* System font fallback with matching metrics to prevent FOUT layout shift */
+      body{font-family:var(--font-body),'ui-sans-serif','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI',sans-serif;background-color:var(--bg-main);color:var(--text-main);line-height:1.5;font-size:16px;overflow-x:hidden;padding-top:70px}
+      .mobile-header{position:fixed;top:0;left:0;width:100%;height:70px;background:rgba(255,255,255,0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-color);display:flex;align-items:center;z-index:900}
+      .header-container{width:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+      .logo{display:flex;align-items:center;gap:8px}
+      .logo-icon{width:46px;height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}
+      .brand-title{font-family:var(--font-heading),'ui-sans-serif',sans-serif;font-size:1.05rem;font-weight:800;color:var(--text-main);line-height:1.1;white-space:nowrap}
+      .mobile-main{display:flex;flex-direction:column;width:100%;z-index:10;position:relative}
+      /* min-height prevents CLS when background image or fonts load into services section */
+      .mobile-section{padding:24px 16px;position:relative;overflow:hidden;min-height:200px}
+      .mobile-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:1}
+      .mobile-section>*{position:relative;z-index:2}
+      .hero-section::before{background-image:linear-gradient(to bottom,rgba(245,248,250,0.15) 0%,rgba(245,248,250,0.3) 100%),url("images/bg_hero_apple.webp");filter:saturate(1.58)}
+      /* Inline services background so it's available from first render — eliminates section CLS */
+      .services-section::before{background-image:linear-gradient(to bottom,rgba(245,248,250,0.15) 0%,rgba(245,248,250,0.3) 100%),url("images/gallery_consultation.webp");filter:saturate(1.58)}
+    </style>
+
+</head>
+<body>
+
+    <!-- Floating Background Shapes -->
+    <div class="glass-blob glass-blob-1"></div>
+    <div class="glass-blob glass-blob-2"></div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/logo.png" alt="Sant Kabir Eye Hospital Logo" width="42" height="42" style="object-fit: contain;">
+                </div>
+                <div class="logo-text">
+                    <span class="brand-title">SANT KABIR EYE HOSPITAL</span>
+                    <span class="brand-tagline" data-translate="brand-tagline">Eye Hospital</span>
+                </div>
+            </div>
+            <div class="lang-switch-wrapper">
+                <button class="lang-switch-btn active" id="btnLangEn">EN</button>
+                <span class="lang-switch-divider">|</span>
+                <button class="lang-switch-btn" id="btnLangHi">हिन्दी</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Main Scroll Container -->
+    <main class="mobile-main">
+        
+        <!-- Hero Card -->
+        <section id="hero" class="mobile-section hero-section">
+            <div class="liquid-glass hero-card">
+                <div class="badges">
+                    <span class="badge" data-translate="hero-badge-1">Government Approved Hospital</span>
+                    <span class="badge" data-translate="hero-badge-2">Ayushman Bharat Partner</span>
+                </div>
+                <h1 data-translate="hero-title">Advanced Eye Diagnostics & <span class="highlight-text">Laser Surgery</span></h1>
+                <p data-translate="hero-description">Sant Kabir Eye Hospital offers premium diagnostic services and advanced micro-surgery options, providing high-quality ocular care for all patients.</p>
+                
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <h3 data-translate="stat-val-1">25+ Yrs</h3>
+                        <p data-translate="stat-lbl-1">Surgical Exp.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-translate="stat-val-2">15k+</h3>
+                        <p data-translate="stat-lbl-2">Micro-Surgeries</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-translate="stat-val-3">100% Free</h3>
+                        <p data-translate="stat-lbl-3">NPCB / Ayushman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services / Eye Diseases -->
+        <section id="services" class="mobile-section services-section">
+            <div class="section-title">
+                <span class="sub-title" data-translate="srv-subtitle">Eye Diseases</span>
+                <h2 data-translate="srv-title-mobile">Our Specialties</h2>
+            </div>
+            
+            <div class="services-list">
+                <!-- Cataract -->
+                <div class="service-card liquid-glass">
+                    <div class="service-header">
+                        <div class="service-icon icon-blue">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="3" fill="currentColor" fill-opacity="0.3"></circle>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="srv-card-1-title">Cataract</h3>
+                    </div>
+                    <p data-translate="srv-card-1-desc">A cataract is clouding or opacity of the lens inside the eye. It causes gradual blurring of vision and finally blindness.</p>
+                    <button class="btn-text btn-book-trigger"><span data-translate="btn-know-more">KNOW MORE</span> &rarr;</button>
+                </div>
+
+                <!-- Glaucoma -->
+                <div class="service-card liquid-glass">
+                    <div class="service-header">
+                        <div class="service-icon icon-teal">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="srv-card-2-title">Glaucoma</h3>
+                    </div>
+                    <p data-translate="srv-card-2-desc">Glaucoma is a term given to a group of eye conditions in which the optic nerve is damaged leading to loss of visual field.</p>
+                    <button class="btn-text btn-book-trigger"><span data-translate="btn-know-more">KNOW MORE</span> &rarr;</button>
+                </div>
+
+                <!-- Oculoplasty -->
+                <div class="service-card liquid-glass">
+                    <div class="service-header">
+                        <div class="service-icon icon-blue">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17 11 19 13 23 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 data-translate="srv-card-3-title">Oculoplastic Surgery</h3>
+                    </div>
+                    <p data-translate="srv-card-3-desc">Oculoplastic surgery, includes a wide variety of surgical procedures that deal with the orbit (eye socket), eyelids, tear ducts, and the face.</p>
+                    <button class="btn-text btn-book-trigger"><span data-translate="btn-know-more">KNOW MORE</span> &rarr;</button>
+                </div>
+
+                <!-- Squint -->
+                <div class="service-card liquid-glass">
+                    <div class="service-header">
+                        <div class="service-icon icon-teal">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 12h8"></path>
+                                <path d="M12 8v8"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="srv-card-4-title">Squint</h3>
+                    </div>
+                    <p data-translate="srv-card-4-desc">Squint is a condition where the eyes point in different directions. One eye may turn inwards, outwards, upwards or downwards while the other eye may look differently.</p>
+                    <button class="btn-text btn-book-trigger"><span data-translate="btn-know-more">KNOW MORE</span> &rarr;</button>
+                </div>
+
+                <!-- Diabetic Retinopathy -->
+                <div class="service-card liquid-glass">
+                    <div class="service-header">
+                        <div class="service-icon icon-blue">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="srv-card-5-title">Diabetic Retinopathy</h3>
+                    </div>
+                    <p data-translate="srv-card-5-desc">Diabetic retinopathy is a complication of diabetes and causes damage to the retina (Microangiopathy).</p>
+                    <button class="btn-text btn-book-trigger"><span data-translate="btn-know-more">KNOW MORE</span> &rarr;</button>
+                </div>
+
+                <!-- Optical Services -->
+                <div class="service-card liquid-glass">
+                    <div class="service-header">
+                        <div class="service-icon icon-teal">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect>
+                                <circle cx="7" cy="12" r="3"></circle>
+                                <circle cx="17" cy="12" r="3"></circle>
+                                <path d="M10 12h4"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="srv-card-6-title">Optical Services</h3>
+                    </div>
+                    <p data-translate="srv-card-6-desc">Precision computerized vision testing to resolve near-sightedness, far-sightedness, astigmatism, and custom optical prescriptions.</p>
+                    <button class="btn-text btn-book-trigger"><span data-translate="btn-know-more">KNOW MORE</span> &rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnostics & Advanced Technology -->
+        <section id="diagnostics" class="mobile-section services-section">
+            <div class="section-title">
+                <span class="sub-title" data-translate="tech-subtitle">Advanced Diagnostics</span>
+                <h2 data-translate="tech-title">Premium Diagnostic & Treatment Equipment</h2>
+            </div>
+            
+            <div class="horizontal-scroll-gallery">
+                <!-- Fundus Camera Card -->
+                <div class="gallery-item liquid-glass" style="padding: 20px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 220px; height: auto;">
+                    <div class="service-icon" style="color: var(--primary); margin-bottom: 12px;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 data-translate="tech-fundus-title" style="font-size: 1rem; margin-bottom: 8px; font-weight: 700; color: var(--text-main);">Retinal Fundus Camera</h3>
+                    <p data-translate="tech-fundus-desc" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 0;">Painless high-resolution imaging of the retina at the back of the eye. Enables early detection of diabetic retinopathy and glaucoma.</p>
+                </div>
+
+                <!-- Auto Perimeter Card -->
+                <div class="gallery-item liquid-glass" style="padding: 20px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 220px; height: auto;">
+                    <div class="service-icon" style="color: var(--primary); margin-bottom: 12px;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-translate="tech-perimeter-title" style="font-size: 1rem; margin-bottom: 8px; font-weight: 700; color: var(--text-main);">Visual Field Auto Perimeter</h3>
+                    <p data-translate="tech-perimeter-desc" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 0;">Precise computerized visual field testing to map peripheral vision. Critical for early screening of glaucoma and optic nerve damage.</p>
+                </div>
+
+                <!-- Green Laser Card -->
+                <div class="gallery-item liquid-glass" style="padding: 20px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 220px; height: auto;">
+                    <div class="service-icon" style="color: var(--primary); margin-bottom: 12px;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="9" x2="19" y2="9"></line>
+                            <line x1="5" y1="15" x2="19" y2="15"></line>
+                            <line x1="9" y1="5" x2="9" y2="19"></line>
+                            <line x1="15" y1="5" x2="15" y2="19"></line>
+                        </svg>
+                    </div>
+                    <h3 data-translate="tech-laser-title" style="font-size: 1rem; margin-bottom: 8px; font-weight: 700; color: var(--text-main);">Retinal Green Laser</h3>
+                    <p data-translate="tech-laser-desc" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 0;">Advanced, non-invasive photocoagulation laser treatment. Used to seal retinal tears and treat diabetic eye diseases.</p>
+                </div>
+
+                <!-- B-Scan Ultrasound Card -->
+                <div class="gallery-item liquid-glass" style="padding: 20px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 220px; height: auto;">
+                    <div class="service-icon" style="color: var(--primary); margin-bottom: 12px;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M2 12h20M12 2v20M5 5l14 14M19 5L5 19"></path>
+                        </svg>
+                    </div>
+                    <h3 data-translate="tech-bscan-title" style="font-size: 1rem; margin-bottom: 8px; font-weight: 700; color: var(--text-main);">B-Scan Ophthalmic Ultrasound</h3>
+                    <p data-translate="tech-bscan-desc" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 0;">High-frequency sound wave imaging to visualize internal structures of the eye, vital when mature cataracts block direct visibility.</p>
+                </div>
+
+                <!-- Zeiss Microscope Card -->
+                <div class="gallery-item liquid-glass" style="padding: 20px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 220px; height: auto;">
+                    <div class="service-icon" style="color: var(--primary); margin-bottom: 12px;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                            <circle cx="12" cy="12" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 data-translate="tech-zeiss-title" style="font-size: 1rem; margin-bottom: 8px; font-weight: 700; color: var(--text-main);">Zeiss Surgical Microscope</h3>
+                    <p data-translate="tech-zeiss-desc" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 0;">World-class precision optics offering maximum visual clarity during high-accuracy micro-surgical cataract procedures.</p>
+                </div>
+
+                <!-- Non-Contact Tonometer Card -->
+                <div class="gallery-item liquid-glass" style="padding: 20px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 220px; height: auto;">
+                    <div class="service-icon" style="color: var(--primary); margin-bottom: 12px;">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v8M8 12h8"></path>
+                        </svg>
+                    </div>
+                    <h3 data-translate="tech-tonometer-title" style="font-size: 1rem; margin-bottom: 8px; font-weight: 700; color: var(--text-main);">Non-Contact Tonometer</h3>
+                    <p data-translate="tech-tonometer-desc" style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 0;">Quick, pain-free air-puff technology to measure intraocular eye pressure for glaucoma screening without touching the eye.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welfare Schemes -->
+        <section id="welfare" class="mobile-section welfare-section">
+            <div class="liquid-glass welfare-card">
+                <span class="sub-title" data-translate="welf-subtitle">Welfare & Excellence</span>
+                <h2 data-translate="welf-title-mobile">Free Treatment Under Govt. Schemes</h2>
+                <p data-translate="welf-desc-mobile">We deliver specialized diagnostic screenings and stitchless cataract surgeries completely free of cost to eligible patients under:</p>
+                
+                <div class="welfare-item">
+                    <div class="welfare-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 data-translate="welf-feat-1-title">Ayushman Bharat (PM-JAY)</h4>
+                        <p data-translate="welf-feat-1-desc-mobile">Cashless diagnostics, surgical treatment, and post-op care.</p>
+                    </div>
+                </div>
+
+                <div class="welfare-item">
+                    <div class="welfare-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 data-translate="welf-feat-2-title-mobile">Blindness Control Programme (NPCB)</h4>
+                        <p data-translate="welf-feat-2-desc-mobile">Direct government sponsored free screening and cataract surgeries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hospital Gallery (Right Scroll Showcase) -->
+        <section id="gallery" class="mobile-section gallery-section">
+            <div class="section-title">
+                <span class="sub-title" data-translate="gal-subtitle">Facilities</span>
+                <h2 data-translate="gal-title">Hospital Gallery</h2>
+            </div>
+            
+            <div class="horizontal-scroll-gallery">
+                <div class="gallery-item liquid-glass">
+                    <img src="images/bg_hero_apple.webp" alt="Diagnostics Suite">
+                    <span class="gallery-caption" data-translate="gal-cap-1">Advanced Diagnostics Suite</span>
+                </div>
+                <div class="gallery-item liquid-glass">
+                    <img src="images/gallery_consultation.webp" alt="Consultation Rooms">
+                    <span class="gallery-caption" data-translate="gal-cap-2">Ophthalmology Consultation Room</span>
+                </div>
+                <div class="gallery-item liquid-glass">
+                    <img src="images/clinic_hero.jpg" alt="Surgeon Performing Surgery">
+                    <span class="gallery-caption" data-translate="gal-cap-3">Advanced Micro-Surgery Unit</span>
+                </div>
+                <div class="gallery-item liquid-glass">
+                    <img src="images/gallery_surgery.webp" alt="Sterile Operating Theater">
+                    <span class="gallery-caption" data-translate="gal-cap-4">Sterile Operating Theater</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hours & Contact Info -->
+        <section id="info" class="mobile-section info-section">
+            <div class="liquid-glass hours-card">
+                <h3 data-translate="hours-title">Working Hours</h3>
+                <table class="hours-table">
+                    <tr><td data-translate="day-mon-sat">Monday - Saturday</td><td class="text-right" data-translate="time-standard-mobile">09:00 AM - 05:00 PM</td></tr>
+                    <tr class="closed-row"><td data-translate="day-sun">Sunday</td><td class="text-right" data-translate="time-sun">Closed (Emergency Only)</td></tr>
+                </table>
+                <div class="note-box">
+                    <p data-translate="hours-note-mobile"><strong>Note:</strong> Closed on festive holidays. Please call ahead to confirm.</p>
+                </div>
+            </div>
+
+            <div class="liquid-glass contact-card">
+                <h3 data-translate="contact-title-mobile">Contact & Location</h3>
+                <p class="address" data-translate="contact-addr-mobile">Bansi Road, near Pindari Hospital, Katra, Basti, Moor Ghat, Uttar Pradesh 272001</p>
+                
+                <div class="payment-warning-inline" data-translate="contact-warning">
+                    <strong>⚠️ Payment Warning / भुगतान चेतावनी:</strong> We never ask for online payments. All transactions are handled in-person at the hospital counter. हम ऑनलाइन भुगतान कभी नहीं मांगते हैं। सभी लेनदेन केवल अस्पताल काउंटर पर भौतिक रूप से होते हैं।
+                </div>
+                <a href="https://maps.app.goo.gl/5BYvRvsRoLVSubBW9" 
+                   target="_blank" rel="noopener noreferrer" class="btn btn-primary map-btn">
+                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                       <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                   </svg>
+                   <span data-translate="btn-directions">Open Location in Google Maps</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Space for sticky bottom bar -->
+        <div class="mobile-footer-spacing"></div>
+    </main>
+
+    <!-- Sticky Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:+919336466677" class="action-btn call-action">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span data-translate="action-call">Call Desk</span>
+        </a>
+        <button class="action-btn book-action btn-book-trigger">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span data-translate="action-book">Book Appointment</span>
+        </button>
+    </div>
+
+    <!-- Booking Modal (Full screen on mobile) -->
+    <div class="booking-modal" id="bookingModal" aria-hidden="true" role="dialog">
+        <div class="modal-overlay"></div>
+        <div class="modal-content liquid-glass">
+            <button class="modal-close" aria-label="Close booking form">&times;</button>
+            <div class="modal-header">
+                <h3 data-translate="modal-title-mobile">Book Examination</h3>
+            </div>
+            
+            <div class="payment-warning-box" data-translate="modal-warning">
+                <strong style="margin-bottom: 2px;">⚠️ Manual Booking & No Online Payments</strong>
+                <p style="margin-bottom: 4px; font-size: 0.78rem;">Appointments are scheduled manually; this form submits an inquiry. We never ask for online payments—all official fees must be paid in-person at the hospital counter to authorized staff only.</p>
+                <p class="hindi-text" style="font-size: 0.75rem; color: #dc3545;"><strong>सुरक्षा सूचना:</strong> बुकिंग मैन्युअल है। ऑनलाइन कोई भुगतान न करें—सभी शुल्क केवल अस्पताल परिसर में सीधे काउंटर पर दें।</p>
+            </div>
+            
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="patientName" data-translate="lbl-name">Patient Name*</label>
+                    <input type="text" id="patientName" required placeholder="Full Name" data-translate-placeholder="plh-name-mobile">
+                </div>
+
+                <div class="form-group">
+                    <label for="patientPhone" data-translate="lbl-phone">Phone Number*</label>
+                    <input type="tel" id="patientPhone" required placeholder="10-digit mobile" pattern="[0-9]{10}" data-translate-placeholder="plh-phone-mobile">
+                </div>
+                <div class="form-group">
+                    <label for="preferredDate" data-translate="lbl-date">Preferred Date*</label>
+                    <input type="date" id="preferredDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eyeService" data-translate="lbl-service">Eye Issue / Select Service (आँख की समस्या/चयन करें)</label>
+                    <select id="eyeService">
+                        <option value="cataract">Cataract (मोतियाबिंद)</option>
+                        <option value="glaucoma">Glaucoma (काला मोतिया)</option>
+                        <option value="blurry_vision">Blurry Vision / Specs Checkup (धुंधला दिखना / चश्मा जांच)</option>
+                        <option value="eye_pain_redness">Redness, Pain or Infection (लाली, दर्द या संक्रमण)</option>
+                        <option value="watering_dryness">Watering or Dry Eyes (आँखों से पानी आना या सूखापन)</option>
+                        <option value="squint_double_vision">Squint or Double Vision (भेंगापन या दोहरी दृष्टि)</option>
+                        <option value="diabetic_retina">Diabetic Retina Checkup (मधुमेह नेत्र रोग जांच)</option>
+                        <option value="eyelid_swelling">Eyelid Swelling or Lid Issues (पलक की सूजन या समस्या)</option>
+                        <option value="child_eye_care">Child Eye Care (बच्चों की आँख की जांच)</option>
+                        <option value="other_query">General Checkup / Other Query (सामान्य जांच / अन्य प्रश्न)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn" data-translate="btn-confirm-booking-mobile">Confirm Request</button>
+                <div style="background: rgba(220,53,69,0.08); border-left: 3px solid #dc3545; padding: 10px 14px; border-radius: 6px; font-size: 0.82rem; color: #c0392b; margin: 14px 0 0 0; text-align: left;">
+                  <strong>⚠️ Please Note:</strong> Submitting this form does <strong>not</strong> confirm your appointment. Our team will contact you to verify and schedule your visit.<br><br>
+                  <span class="hindi-text"><strong>⚠️ कृपया ध्यान दें:</strong> यह फ़ॉर्म भरने से अपॉइंटमेंट की पुष्टि <strong>नहीं</strong> होती। हमारी टीम आपसे संपर्क करके आपकी विजिट तय करेगी।</span>
+                </div>
+            </form>
+
+            <div id="mobileSuccessMessage" style="display: none; text-align: center; padding: 40px 10px;">
+                <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#2ecc71" stroke-width="2" style="margin-bottom: 16px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3 style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 8px;">Request Submitted!</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">We've received your appointment request. We will contact you shortly.</p>
+                <p style="font-size: 0.85rem; color: #888;">Closing automatically...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile JS Logic -->
+    <script>
+        // Modal toggling
+        const bookingModal = document.getElementById('bookingModal');
+        const triggers = document.querySelectorAll('.btn-book-trigger');
+        const closeBtn = document.querySelector('.modal-close');
+        const overlay = document.querySelector('.modal-overlay');
+
+        function toggleModal(open) {
+            if (open) {
+                bookingModal.classList.add('active');
+                bookingModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            } else {
+                bookingModal.classList.remove('active');
+                bookingModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        }
+
+        triggers.forEach(t => t.addEventListener('click', () => toggleModal(true)));
+        closeBtn.addEventListener('click', () => toggleModal(false));
+        overlay.addEventListener('click', () => toggleModal(false));
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name    = document.getElementById('patientName').value.trim();
+            const phone   = document.getElementById('patientPhone').value.trim();
+            const date    = document.getElementById('preferredDate').value;
+            const service = document.getElementById('eyeService').options[document.getElementById('eyeService').selectedIndex].text;
+
+            if (!/^[0-9]{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            // --- Send to Telegram Group ---
+            const TG_TOKEN   = '8771442885:AAHEBn18TyzVqzLv-t4LHC9ycysvfATE2Ts';
+            const TG_CHAT_ID = '-1004415167828';
+            const text = [
+                '🏥 *New Appointment Request*',
+                `👤 *Name:* ${name}`,
+                `📞 *Phone:* ${phone}`,
+                `📅 *Preferred Date:* ${date}`,
+                `👁 *Service:* ${service}`,
+                `📱 *Source:* Mobile Website`
+            ].join('\n');
+
+            fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TG_CHAT_ID,
+                    text: text,
+                    parse_mode: 'Markdown'
+                })
+            }).catch(() => {});
+
+            // Show success feedback
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('mobileSuccessMessage').style.display = 'block';
+
+            // Auto close/redirect after 5s
+            setTimeout(() => {
+                toggleModal(false);
+                
+                // Reset form state in background after modal closes
+                setTimeout(() => {
+                    document.getElementById('bookingForm').reset();
+                    document.getElementById('bookingForm').style.display = 'block';
+                    document.getElementById('mobileSuccessMessage').style.display = 'none';
+                }, 400);
+            }, 5000);
+        });
+
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('preferredDate').value = tomorrow.toISOString().split('T')[0];
+
+        // --- Translation Engine for Mobile ---
+        const translations = {
+            "brand-tagline": { en: "Eye Hospital", hi: "नेत्र अस्पताल" },
+            "hero-badge-1": { en: "Certified Premium Eye Care Hospital", hi: "प्रमाणित प्रीमियम नेत्र अस्पताल" },
+            "hero-badge-2": { en: "Ayushman Bharat Yojana Partner", hi: "आयुष्मान भारत योजना सहयोगी" },
+            "hero-title": { en: "Advanced Eye Diagnostics & Laser Surgery", hi: "उन्नत नेत्र निदान और लेज़र सर्जरी" },
+            "hero-description": { en: "Sant Kabir Eye Hospital offers premium diagnostic services and advanced micro-surgery options, providing high-quality ocular care for all patients.", hi: "संत कबीर आई हॉस्पिटल सभी रोगियों के लिए उच्च गुणवत्ता वाली नेत्र देखभाल प्रदान करते हुए, प्रीमियम नैदानिक सेवाएं और उन्नत सूक्ष्म-सर्जरी विकल्प प्रदान करता है।" },
+            "stat-val-1": { en: "25+ Yrs", hi: "25+ वर्ष" },
+            "stat-lbl-1": { en: "Surgical Exp.", hi: "सर्जरी अनुभव" },
+            "stat-val-2": { en: "15k+", hi: "15k+" },
+            "stat-lbl-2": { en: "Micro-Surgeries", hi: "सूक्ष्म-सर्जरी" },
+            "stat-val-3": { en: "PM-JAY", hi: "PM-JAY" },
+            "stat-lbl-3": { en: "Cashless Cover", hi: "कैशलेस कवर" },
+            "srv-subtitle": { en: "Eye Diseases", hi: "नेत्र रोग" },
+            "srv-title-mobile": { en: "Our Specialties", hi: "हमारी विशेषताएं" },
+            "srv-card-1-title": { en: "Cataract", hi: "मोतियाबिंद" },
+            "srv-card-1-desc": { en: "A cataract is clouding or opacity of the lens inside the eye. It causes gradual blurring of vision and finally blindness.", hi: "मोतियाबिंद आंख के अंदर के लेंस का धुंधला होना है। यह दृष्टि के धीरे-धीरे धुंधले होने और अंततः अंधापन का कारण बनता है।" },
+            "btn-know-more": { en: "KNOW MORE", hi: "और जानें" },
+            "srv-card-2-title": { en: "Glaucoma", hi: "काला मोतिया" },
+            "srv-card-2-desc": { en: "Glaucoma is a term given to a group of eye conditions in which the optic nerve is damaged leading to loss of visual field.", hi: "काला मोतिया आंखों की उन स्थितियों का समूह है जिसमें ऑप्टिक तंत्रिका क्षतिग्रस्त हो जाती है, जिससे दृष्टि क्षेत्र की हानि होती है।" },
+            "srv-card-3-title": { en: "Oculoplastic Surgery", hi: "पलक और फेस सर्जरी" },
+            "srv-card-3-desc": { en: "Oculoplastic surgery, includes a wide variety of surgical procedures that deal with the orbit (eye socket), eyelids, tear ducts, and the face.", hi: "ओकुलोप्लास्टिक सर्जरी में आंख की सॉकेट, पलकों, आंसू नलिकाओं और चेहरे से संबंधित विभिन्न प्रकार की सर्जिकल प्रक्रियाएं शामिल हैं।" },
+            "srv-card-4-title": { en: "Squint", hi: "भेंगापन" },
+            "srv-card-4-desc": { en: "Squint is a condition where the eyes point in different directions. One eye may turn inwards, outwards, upwards or downwards while the other eye may look differently.", hi: "भेंगापन वह स्थिति है जहां आंखें अलग-अलग दिशाओं में देखती हैं। एक आंख अंदर, बाहर, ऊपर या नीचे घूम सकती है जबकि दूसरी आंख सामान्य रहती है।" },
+            "srv-card-5-title": { en: "Diabetic Retinopathy", hi: "मधुमेह नेत्र रोग" },
+            "srv-card-5-desc": { en: "Diabetic retinopathy is a complication of diabetes and causes damage to the retina (Microangiopathy).", hi: "मधुमेह रेटिनोपैथी मधुमेह (डायबिटीज) की एक जटिलता है और आंख के पिछले हिस्से (रेटिना) को नुकसान पहुंचाती है।" },
+            "srv-card-6-title": { en: "Optical Services", hi: "चश्मा और दृष्टि जांच" },
+            "srv-card-6-desc": { en: "Precision computerized vision testing to resolve near-sightedness, far-sightedness, astigmatism, and custom optical prescriptions.", hi: "निकट-दृष्टि, दूर-दृष्टि, दृष्टिवैषम्य (एस्टिग्मैटिज्म) को दूर करने के लिए सटीक कंप्यूटरीकृत दृष्टि परीक्षण और नया चश्मा पर्चा।" },
+            "welf-subtitle": { en: "Premium Services & Government Welfare", hi: "प्रीमियम सेवाएं और सरकारी कल्याण" },
+            "welf-title-mobile": { en: "High-Precision Eye Care with Cashless Welfare Cover", hi: "कैशलेस कल्याण कवर के साथ उच्च-सटीक नेत्र देखभाल" },
+            "welf-desc-mobile": { en: "We combine high-precision private diagnostic care and premium lens implant options with a commitment to public welfare. Eligible families receive cashless, completely free surgeries under government initiatives.", hi: "हम सार्वजनिक कल्याण के प्रति प्रतिबद्धता के साथ उच्च-सटीक निजी नैदानिक देखभाल और प्रीमियम लेंस प्रत्यारोपण विकल्पों को जोड़ते हैं। पात्र परिवारों को सरकारी पहलों के तहत कैशलेस, पूरी तरह से मुफ्त सर्जरी मिलती है।" },
+            "welf-feat-1-title": { en: "Ayushman Bharat Cashless Cover", hi: "आयुष्मान भारत कैशलेस कवर" },
+            "welf-feat-1-desc-mobile": { en: "Comprehensive diagnostics, micro-surgical eye treatments, and follow-up care covered 100% free of cost for eligible PM-JAY cardholders.", hi: "प्रीमिवल उपचार, और आवश्यक नेत्र चिकित्सा सेवाएं 100% कवर हैं।" },
+            "welf-feat-2-title-mobile": { en: "Advanced Premium Surgical Implants", hi: "उन्नत प्रीमियम सर्जिकल इम्प्लांट्स" },
+            "welf-feat-2-desc-mobile": { en: "Specialized premium lens implant options (Toric, Multifocal) and computer-assisted diagnostics for patients seeking ultimate post-op visual clarity.", hi: "सर्वोत्तम पोस्ट-ऑपरेटिव दृश्य स्पष्टता चाहने वाले रोगियों के लिए विशेष प्रीमियम लेंस प्रत्यारोपण विकल्प (टोरिक, मल्टीफोकल) और कंप्यूटर-सहायता प्राप्त निदान उपलब्ध हैं।" },
+            "tech-subtitle": { en: "Advanced Diagnostics", hi: "उन्नत नैदानिक तकनीक" },
+            "tech-title": { en: "Premium Diagnostic & Treatment Equipment", hi: "प्रीमियम नैदानिक एवं उपचार उपकरण" },
+            "tech-desc": { en: "Our centers are equipped with world-class diagnostic, laser, and surgical technologies to detect eye conditions early and ensure absolute surgical precision.", hi: "हमारे केंद्र आंखों की बीमारियों का जल्द पता लगाने और सर्जरी में पूर्ण सटीकता सुनिश्चित करने के लिए विश्व स्तरीय नैदानिक, लेज़र और सर्जिकल तकनीकों से लैस हैं।" },
+            "tech-fundus-title": { en: "Retinal Fundus Camera", hi: "रेटिनल फंडस कैमरा" },
+            "tech-fundus-desc": { en: "Painless high-resolution imaging of the retina at the back of the eye. Enables early detection of diabetic retinopathy and glaucoma.", hi: "आँखों के पीछे रेटिना की दर्द रहित उच्च-रिज़ॉल्यूशन वाली इमेजिंग। यह डायबिटिक रेटिनोपैथी और ग्लूकोमा का शीघ्र पता लगाने में मदद करता है।" },
+            "tech-perimeter-title": { en: "Visual Field Auto Perimeter", hi: "विजुअल फील्ड ऑटो परिमीटर" },
+            "tech-perimeter-desc": { en: "Precise computerized visual field testing to map peripheral vision. Critical for early screening of glaucoma and optic nerve damage.", hi: "आँखों के चारों ओर दृष्टि क्षेत्र (विजुअल फील्ड) को मापने के लिए सटीक कंप्यूटर परीक्षण। ग्लूकोमा और ऑप्टिक तंत्रिका क्षति की शीघ्र जांच के लिए आवश्यक।" },
+            "tech-laser-title": { en: "Retinal Green Laser", hi: "रेटिनल ग्रीन लेज़र" },
+            "tech-laser-desc": { en: "Advanced, non-invasive photocoagulation laser treatment. Used to seal retinal tears and treat diabetic eye diseases.", hi: "उन्नत, गैर-आक्रामक रेटिना लेज़र उपचार। इसका उपयोग डायबिटिक रेटिनोपैथी और रेटिना के फटने/छिद्रों को सील करने के लिए किया जाता है।" },
+            "tech-bscan-title": { en: "B-Scan Ophthalmic Ultrasound", hi: "बी-स्कैन ओप्थाल्मिक अल्ट्रासाउंड" },
+            "tech-bscan-desc": { en: "High-frequency sound wave imaging to visualize internal structures of the eye, vital when mature cataracts block direct visibility.", hi: "उच्च आवृत्ति ध्वनि तरंगों द्वारा आँख के अंदर की विस्तृत तस्वीरें। मोतियाबिंद के कारण आँख के आंतरिक हिस्से को देखना अवरुद्ध होने पर अत्यंत आवश्यक परीक्षण।" },
+            "tech-zeiss-title": { en: "Zeiss Surgical Microscope", hi: "ज़ीस सर्जिकल माइक्रोस्कोप" },
+            "tech-zeiss-desc": { en: "World-class precision optics offering maximum visual clarity during high-accuracy micro-surgical cataract procedures.", hi: "उच्च परिशुद्धता सूक्ष्म-सर्जिकल मोतियाबिंद प्रक्रियाओं के दौरान सर्वोत्तम दृश्य स्पष्टता प्रदान करने वाला विश्व स्तरीय सटीक माइक्रोस्कोप।" },
+            "tech-tonometer-title": { en: "Non-Contact Tonometer", hi: "नॉन-कॉन्टैक्ट टोनोमीटर" },
+            "tech-tonometer-desc": { en: "Quick, pain-free air-puff technology to measure intraocular eye pressure for glaucoma screening without touching the eye.", hi: "आँखों को बिना छुए हवा के हल्के झोंके से ग्लूकोमा की जाँच के लिए आँखों का दबाव मापने की दर्द रहित त्वरित तकनीक।" },
+            "gal-subtitle": { en: "Facilities", hi: "सुविधाएं" },
+            "gal-title": { en: "Hospital Gallery", hi: "अस्पताल की गैलरी" },
+            "gal-cap-1": { en: "Advanced Diagnostics Suite", hi: "आधूनिक नेत्र परीक्षण प्रयोगशाला" },
+            "gal-cap-2": { en: "Ophthalmology Consultation Room", hi: "नेत्र विशेषज्ञ परामर्श कक्ष" },
+            "gal-cap-3": { en: "Advanced Micro-Surgery Unit", hi: "आधुनिक सूक्ष्म-सर्जरी इकाई" },
+            "gal-cap-4": { en: "Sterile Operating Theater", hi: "कीटाणुरहित ऑपरेशन थिएटर" },
+            "hours-title": { en: "Working Hours", hi: "क्लीनिक समय" },
+            "day-mon-sat": { en: "Monday - Saturday", hi: "सोमवार - शनिवार" },
+            "time-standard-mobile": { en: "09:00 AM - 05:00 PM", hi: "सुबह 09:00 - शाम 05:00 बजे" },
+            "day-sun": { en: "Sunday", hi: "रविवार" },
+            "time-sun": { en: "Closed (Emergency Only)", hi: "बंद (केवल आपातकालीन सेवाएं)" },
+            "hours-note-mobile": { en: "<strong>Note:</strong> Closed on festive holidays. Please call ahead to confirm.", hi: "<strong>सूचना:</strong> त्योहारों की छुट्टियों पर बंद रहता है। पुष्टि के लिए कृपया पहले फोन करें।" },
+            "contact-title-mobile": { en: "Contact & Location", hi: "संपर्क और पता" },
+            "contact-addr-mobile": { en: "Bansi Road, near Pindari Hospital, Katra, Basti, Moor Ghat, Uttar Pradesh 272001", hi: "बांसी रोड, पिंडारी अस्पताल के पास, कटरा, बस्ती, मूर घाट, उत्तर प्रदेश 272001" },
+            "contact-warning": { en: "<strong>⚠️ Payment Warning / भुगतान चेतावनी:</strong> We never ask for online payments. All transactions are handled in-person at the hospital counter. हम ऑनलाइन भुगतान कभी नहीं मांगते हैं। सभी लेनदेन केवल अस्पताल काउंटर पर भौतिक रूप से होते हैं।", hi: "<strong>⚠️ भुगतान चेतावनी / Payment Warning:</strong> हम ऑनलाइन भुगतान कभी नहीं मांगते हैं। सभी लेनदेन केवल अस्पताल काउंटर पर भौतिक रूप से होते हैं।" },
+            "btn-directions": { en: "Open Location in Google Maps", hi: "गूगल मैप्स पर खोलें" },
+            "action-call": { en: "Call Desk", hi: "फ़ोन करें" },
+            "action-book": { en: "Book Appointment", hi: "अपॉइंटमेंट लें" },
+            "modal-title-mobile": { en: "Book Examination", hi: "नेत्र जांच बुक करें" },
+            "modal-warning": { en: "<strong>⚠️ Manual Booking & No Online Payments</strong><p style=\"margin-bottom: 4px; font-size: 0.78rem;\">Appointments are scheduled manually; this form submits an inquiry. We never ask for online payments—all official fees must be paid in-person at the hospital counter to authorized staff only.</p><p class=\"hindi-text\" style=\"font-size: 0.75rem; color: #dc3545;\"><strong>सुरक्षा सूचना:</strong> बुकिंग मैन्युअल है। ऑनलाइन कोई भुगतान न करें—सभी शुल्क केवल अस्पताल परिसर में सीधे काउंटर पर दें।</p>", hi: "<strong>⚠️ मैन्युअल बुकिंग और कोई ऑनलाइन भुगतान नहीं</strong><p style=\"margin-bottom: 4px; font-size: 0.78rem;\">अपॉइंटमेंट मैन्युअल रूप से निर्धारित किए जाते हैं; यह फॉर्म केवल एक पूछताछ सबमिट करता है। हम कभी ऑनलाइन भुगतान नहीं मांगते—सभी शुल्क अस्पताल काउंटर पर अधिकृत कर्मचारी को ही दें।</p><p class=\"hindi-text\" style=\"font-size: 0.75rem; color: #dc3545;\"><strong>सुरक्षा सूचना:</strong> बुकिंग मैन्युअल है। ऑनलाइन कोई भुगतान न करें—सभी शुल्क केवल अस्पताल परिसर में सीधे काउंटर पर दें।</p>" },
+            "lbl-name": { en: "Patient Name*", hi: "रोगी का नाम*" },
+            "plh-name-mobile": { en: "Full Name", hi: "रोगी का पूरा नाम दर्ज करें" },
+            "lbl-email": { en: "Email Address*", hi: "ईमेल पता*" },
+            "plh-email-mobile": { en: "Email Address", hi: "ईमेल पता दर्ज करें" },
+            "lbl-phone": { en: "Phone Number*", hi: "मोबाइल नंबर*" },
+            "plh-phone-mobile": { en: "10-digit mobile", hi: "10-अंकीय मोबाइल नंबर दर्ज करें" },
+            "lbl-date": { en: "Preferred Date*", hi: "पसंद की तिथि*" },
+            "lbl-service": { en: "Eye Issue / Select Service (आँख की समस्या/चयन करें)", hi: "आँख की समस्या / सेवा का चयन" },
+            "btn-confirm-booking-mobile": { en: "Confirm Request", hi: "अनुरोध की पुष्टि करें" }
+        };
+
+        const btnLangEn = document.getElementById('btnLangEn');
+        const btnLangHi = document.getElementById('btnLangHi');
+
+        function applyLanguage(lang) {
+            localStorage.setItem('preferredLang', lang);
+            
+            if (lang === 'hi') {
+                btnLangHi?.classList.add('active');
+                btnLangEn?.classList.remove('active');
+            } else {
+                btnLangEn?.classList.add('active');
+                btnLangHi?.classList.remove('active');
+            }
+
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[key] && translations[key][lang]) {
+                    if (key.includes('warning') || key.includes('desc') || key.includes('note') || key.includes('addr')) {
+                        el.innerHTML = translations[key][lang];
+                    } else {
+                        el.innerText = translations[key][lang];
+                    }
+                }
+            });
+
+            document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-translate-placeholder');
+                if (translations[key] && translations[key][lang]) {
+                    el.setAttribute('placeholder', translations[key][lang]);
+                }
+            });
+        }
+
+        btnLangEn?.addEventListener('click', () => applyLanguage('en'));
+        btnLangHi?.addEventListener('click', () => applyLanguage('hi'));
+
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        applyLanguage(savedLang);
+    </script>
+
+</body>
+</html>
