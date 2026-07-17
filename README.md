@@ -58,3 +58,15 @@ The visual design focuses on a modern **Glassmorphism** aesthetic.
 
 ---
 *Dedicated to preserving vision and providing world-class eye care.*
+
+
+---
+
+## 🌐 Purvanchal Eye Care Network
+
+This facility is part of a comprehensive network of premier eye care hospitals providing advanced surgical and diagnostic services across the Purvanchal region of Uttar Pradesh. Managed by a unified administration, these sister hospitals share a common commitment to exceptional patient care and identical high-quality standards.
+
+**Our Network of Hospitals:**
+* 🏥 **[Ayodhya Phaco Center Eye Hospital](https://ayodhyaphacocenter.org)** - Ayodhya
+* 🏥 **[Sant Kabir Eye Hospital](https://santkabireyehospital.com)** - Basti
+* 🏥 **[Sunbeam Eye Hospital](https://sunbeameyehospital.com)** - Sultanpur
